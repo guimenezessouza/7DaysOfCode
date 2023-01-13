@@ -3,12 +3,13 @@ function pegaNumero() {
 }
 
 const numeroCerto = pegaNumero();
-console.log(numeroCerto);
+var acertou = false;
 
 for (let i = 0; i < 3; i++) {
     var chute = prompt(`Qual valor eu pensei? Caso erre, terá mais ${2 - i} tentativa(s)`);
     if (chute == numeroCerto) {
-        alert('Parabéns!');
+        alert(`Parabéns! O número certo era ${numeroCerto}.`);
+        acertou = true;
         break;
     }
     else {
@@ -16,4 +17,7 @@ for (let i = 0; i < 3; i++) {
     }
 }
 
-alert(`O número certo era ${numeroCerto}.`);
+if (!acertou) {
+    alert(`Infelizmente você não acertou. O número certo era ${numeroCerto}.`);
+}
+
